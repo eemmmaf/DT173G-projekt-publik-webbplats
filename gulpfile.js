@@ -1,3 +1,10 @@
+/*
+ * @Author: Emma Forslund - emfo2102 
+ * @Date: 2022-06-02 00:46:58 
+ * @Last Modified by: Emma Forslund - emfo2102
+ * @Last Modified time: 2022-06-02 00:49:16
+ */
+
 //Hämtar in gulp-paketet och sparar i ett objekt
 const { src, dest, parallel, series, watch } = require('gulp');
 //Hämtar in gulp-concat, som slår ihop filer
@@ -17,7 +24,8 @@ const babel = require("gulp-babel");
 const files = {
     htmlPath: "src/**/*.html",
     jsPath: "src/js/*.js",
-    sassPath: "src/scss/*.scss"
+    sassPath: "src/scss/*.scss",
+    imgPath: "src/images/*",
 }
 
 //HTML-task. Kopierar över filerna till katalogen pub
@@ -38,6 +46,12 @@ function jsCopy() {
         .pipe(dest('pub/js'));
 }
 
+//Image-task. Kopierar över filerna till katalogen pub/images
+function imgCopy() {
+    return src(files.imgPath)
+        .pipe(dest('pub/images'));
+}
+
 //Sass-task
 function sassTask() {
     return src(files.sassPath)
@@ -55,11 +69,11 @@ function watchTask() {
     });
 
 
-    watch([files.htmlPath, files.sassPath, files.jsPath], parallel(htmlCopy, jsCopy, sassTask)).on('change', browserSync.reload);
+    watch([files.htmlPath, files.sassPath, files.jsPath, files.imgPath], parallel(htmlCopy, jsCopy, sassTask, imgCopy)).on('change', browserSync.reload);
 }
 
 //Exporterar
 exports.default = series(
-    parallel(htmlCopy, jsCopy, sassTask),
+    parallel(htmlCopy, jsCopy, sassTask, imgCopy),
     watchTask
 )
