@@ -1,0 +1,166 @@
+.active {
+    border-bottom: 3px solid $c-light;
+}
+
+.hoverbold{
+    font-weight: bold;
+}
+
+.li-btn {
+    background-color: $c-light;
+    padding: 2rem 3rem 1.5rem 3rem;
+
+    a {
+        color: $c-dark;
+    }
+}
+
+input[type=submit]{
+    background-color: $c-complement;
+    border:none;
+    box-shadow: $shadow;
+    padding:1rem;
+    color:white;
+    font-family: $font-family;
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+input[type=submit]:hover{
+    font-weight: bold;
+}
+
+.menu-section {
+    max-width: 1000px;
+    width: 100%;
+    margin: auto;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: $shadow;
+    background-color: $c-complement-light;
+
+    div {
+        margin: auto;
+    }
+
+    h1 {
+        color: $c-main;
+    }
+
+    h2 {
+        margin-bottom: 0;
+    }
+    p{
+        max-width:800px;
+        width:100%;
+        margin: auto;
+    }
+}
+
+.bold-p{
+    @extend .hoverbold;
+}
+
+.hero-text {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.booking-section {
+    margin: auto;
+    background-color: $c-complement-light;
+    max-width: 800px;
+    padding-top:0.5rem;
+}
+
+.hero {
+    text-align: center;
+    color: white;
+
+    img {
+        width: 100%;
+    }
+}
+
+.description-p {
+    margin-bottom: 5rem;
+}
+
+%menubox {
+    max-width: 700px;
+    border-bottom: 3px dotted $c-complement;
+}
+
+.flex-btn{
+    @extend .flex;
+    justify-content: space-between;
+}
+
+
+.icon-flex {
+    display: flex;
+
+    div {
+        margin-top: 0.5rem;
+        margin-left: 0.5rem;
+    }
+}
+
+.flex {
+    display: flex;
+    max-width: 400px;
+
+    label{
+        margin-left:4rem;
+    }
+
+    div {
+        margin: 2rem;
+    }
+}
+
+.logo {
+    max-width: 200px;
+}
+
+.reset{
+    background-color: #30100b;
+    color: $c-light;
+    border:none;
+    box-shadow: $shadow;
+    padding:1rem;
+    color:white;
+    font-family: $font-family;
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+.reset:hover{
+    @extend .hoverbold;
+}
+
+.flex-index{
+    max-width:1200px;
+    width: 100%;
+    margin:auto;
+    display:flex;
+    justify-content: space-evenly;
+    h3{
+        color: $c-light;
+    }
+    p{
+        color: $c-light;
+    }
+    div{
+        max-width:350px;
+        h3, p{
+            text-align: center;
+        }
+    }
+}
+
+.box{
+    margin-top:4rem;
+}
