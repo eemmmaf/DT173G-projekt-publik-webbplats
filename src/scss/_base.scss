@@ -1,0 +1,21 @@
+//Fonts
+@import url('https://fonts.googleapis.com/css2?family=Abel&family=Arvo&family=Satisfy&family=Ubuntu&display=swap');
+
+
+//Färger
+$c-main : #30100b;
+$c-dark : darken($c-main, 5%);
+$c-light : lighten($c-main, 80%);
+$c-complement : #1a3b0b;
+$c-complement-light: lighten($c-complement, 85%);
+
+//Textstorlekar
+
+
+//Font-families
+$font-family: 'Abel', sans-serif;
+$heading-family:'Arvo', serif;;
+$big-heading :'Satisfy', sans-serif;
+
+//Box-shadow
+$shadow : rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
