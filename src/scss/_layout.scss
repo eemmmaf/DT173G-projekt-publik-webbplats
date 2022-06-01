@@ -1,0 +1,212 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    margin: 0;
+}
+
+main {
+    margin-top: 7rem;
+}
+
+body {
+    background-color: $c-main;
+}
+
+h1 {
+    font-size: 6rem;
+    text-align: center;
+    font-family: $big-heading;
+    color: $c-main;
+}
+
+h2 {
+    font-size: 3rem;
+    font-family: $heading-family;
+    font-weight: bold;
+    color: $c-main;
+}
+
+h3 {
+    font-size: 2.8rem;
+    font-family: $font-family;
+    color: $c-complement;
+}
+
+h4 {
+    font-size: 2rem;
+    font-family: $heading-family;
+    color: $c-main;
+}
+
+header {
+    background-color: $c-dark;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+    padding: 1rem;
+    box-shadow: $shadow;
+}
+
+
+nav {
+    margin: 0 auto;
+
+    a {
+        color: $c-light;
+        font-size: 2.2rem;
+        text-decoration: none;
+        font-family: $font-family;
+    }
+}
+
+a:hover {
+    font-weight: bold;
+}
+
+.desktop-nav ul {
+    list-style-type: none;
+    position: absolute;
+    top: 2.5rem;
+    right: 2%;
+}
+
+nav {
+    li {
+        display: inline;
+        margin: 2rem;
+    }
+}
+
+p,
+label {
+    font-size: 2rem;
+    font-family: $font-family;
+}
+
+form {
+    max-width: 500px;
+    width: 100%;
+    margin: 0 auto;
+    padding-bottom: 4rem;
+}
+
+a {
+    font-family: $font-family;
+    text-decoration: none;
+    color: $c-dark;
+}
+
+
+input[type=text],
+input[type=email],
+input[type=number],
+textarea {
+    max-width: 400px;
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 3rem;
+}
+
+input[type=time],
+input[type=date] {
+    max-width: 200px;
+    width: 100%;
+}
+
+span {
+    font-size: 1.6rem;
+    color: rgb(178, 5, 5);
+    font-weight: bold;
+    font-family: $heading-family;
+    margin-bottom: 0.5rem;
+}
+
+.required {
+    font-size: 2rem;
+}
+
+select {
+    max-width: 200px;
+    padding: 2rem;
+}
+
+#quantity-div {
+    max-width: 200px;
+    width: 100%;
+    margin: auto;
+}
+
+.hero-text{
+ h1{
+    color: $c-light;
+ }
+    a{
+        @extend .li-btn;
+        font-size: 4rem;
+    }
+}
+
+#textarea {
+    margin-top: 5rem;
+}
+
+form i {
+    font-size: 1.7rem;
+    color: white;
+}
+
+#msg-output {
+    max-width: 500px;
+    margin: auto;
+
+    p {
+        font-size: 2.5rem;
+        font-weight: bold;
+    }
+}
+
+.index-dinner{
+    h2{
+        text-align: center;
+        color: $c-light;
+    }
+}
+
+footer{
+    text-align: center;
+    background-color: $c-dark;
+    color: $c-light;
+    padding:2rem;
+    margin-top:1rem;
+}
+
+//Meny-sidan
+#starter,
+#maincourse,
+#dessert,
+#whitewine,
+#redwine,
+#beer,
+#nonalcohol {
+    @extend %menubox;
+}
+
+@media only screen and (max-width: 800px) {
+    .flex-menu {
+        display: block;
+        margin: auto;
+
+        div {
+            margin: auto;
+        }
+    }
+
+    %menubox {
+        max-width: 800px;
+        width: 100%;
+    }
+}
