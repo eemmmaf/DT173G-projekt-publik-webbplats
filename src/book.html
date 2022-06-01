@@ -1,0 +1,139 @@
+<!--/*
+ * @Author: Emma Forslund - emfo2102 
+ * @Date: 2022-06-02 00:46:12 
+ * @Last Modified by:   Emma Forslund - emfo2102 
+ * @Last Modified time: 2022-06-02 00:46:12 
+ */
+-->
+
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/2090b52781.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/main.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        <a class="logo" href="index.html"><img src="images/loggan.svg" alt=""></a>
+        <nav class="desktop-nav">
+            <ul class="nav-ul" id="nav-ul">
+                <li><a href="about.html">Om oss</a></li>
+                <li><a href="menu.html">Meny</a></li>
+                <li class="li-btn"><a href="book.html">Boka bord</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="booking-section">
+            <h1>Boka bord</h1>
+            <div id="msg-output"></div>
+            <form id="form-bookings">
+                <!--Förnamn-->
+                <div>
+                    <label for="fname">Förnamn: <span class="required">*</span></label><br><br>
+                    <div id="error-fname"></div>
+                    <div class="icon-flex">
+                        <input type="text" id="fname" name="fname"><br>
+                        <div><i id="i-fname" class="fa-solid fa-circle-check"></i></div>
+                    </div>
+                </div>
+                <!--Efternamn-->
+                <label for="ename">Efternamn: <span class="required">*</span></label><br><br>
+                <div id="error-ename"></div>
+                <div class="icon-flex">
+                    <input type="text" id="ename" name="ename"><br>
+                    <div><i id="i-ename" class="fa-solid fa-circle-check"></i></div>
+                </div>
+                <!--email-->
+                <div>
+                    <label for="email">Email: <span class="required">*</span></label><br><br>
+                    <div id="error-email"></div>
+                    <div class="icon-flex">
+                        <input type="email" id="email" name="email">
+                        <div><i id="i-email" class="fa-solid fa-circle-check"></i></div>
+                    </div>
+                    <br>
+                </div>
+                <!--Datum och tid-->
+                <div class="flex">
+                    <div>
+                        <label for="date">Datum: <span class="required">*</span></label><br><br>
+                        <div id="error-date"></div>
+                        <div class="icon-flex">
+                            <input type="date" id="date" name="date"><br><br><br>
+                            <div><i id="i-date" class="fa-solid fa-circle-check"></i></div>
+                        </div>
+
+                    </div>
+                    <div>
+                        <label for="time">Tid: <span class="required">*</span></label><br><br>
+                        <div id="error-time"></div>
+                        <div class="icon-flex">
+                            <select name="time" id="time">
+
+                                <option value="">Tid:</option>
+                                <option value="15:00">15:00</option>
+                                <option value="15:30">15:30</option>
+                                <option value="16:00">16:00</option>
+                                <option value="16:30">16:30</option>
+                                <option value="17:00">17:00</option>
+                                <option value="17:30">17:30</option>
+                                <option value="18:00">18:00</option>
+                                <option value="18:30">18:30</option>
+                                <option value="19:00">19:00</option>
+                                <option value="19:30">19:30</option>
+                                <option value="20:00">20:00</option>
+                                <option value="20:30">20:30</option>
+                                <option value="21:00">21:00</option>
+                                <option value="21:30">21:30</option>
+                                <option value="22:00">22:00</option>
+                            </select>
+                            <div><i id="i-time" class="fa-solid fa-circle-check"></i></div>
+                        </div>
+                    </div>
+                </div>
+                <div id="quantity-div">
+                    <label for="quantity">Antal personer: <span class="required">*</span></label><br><br>
+                    <div id="error-quantity"></div>
+                    <div class="icon-flex">
+                        <select name="quantity" id="quantity">
+                            <option value="">Välj antal gäster</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                        </select>
+                        <div><i id="i-quantity" class="fa-solid fa-circle-check"></i></div>
+                    </div>
+                </div>
+                <div id="textarea">
+                    <label for="textmessage">Önskemål(frivilligt)</label><br><br>
+                    <textarea name="textmessage" id="textmessage" rows="6" cols="40"> </textarea>
+                </div>
+                <!--Skicka-->
+                <div class="flex-btn">
+                    <input type="submit" class="submit-btn" value="Lägg till bokning" id="submit-btn">
+                    <button id="reset" class="reset">Rensa fälten</button>
+                </div>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>Trattoria Romantico | trattoriaromantico@mail.se | emfo2102@student.miun.se 2022</p>
+    </footer>
+    <script src="js/booking.js"></script>
+</body>
+
+</html>
