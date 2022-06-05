@@ -1,13 +1,14 @@
 /*
  * @Author: Emma Forslund - emfo2102 
  * @Date: 2022-06-02 00:47:44 
- * @Last Modified by:   Emma Forslund - emfo2102 
- * @Last Modified time: 2022-06-02 00:47:44 
+ * @Last Modified by: Emma Forslund - emfo2102
+ * @Last Modified time: 2022-06-05 11:41:24
  */
 
+"use strict";
 
-//URL till api:et
-let bookingUrl = "http://localhost/projekt_webservice/bookingapi.php";
+//URL till api:et bookingapi
+let bookingUrl = "https://studenter.miun.se/~emfo2102/writeable/projekt_webservice/bookingapi.php";
 
 //variabler för bokningens inputfält
 const fnameInput = document.getElementById("fname");
@@ -17,6 +18,10 @@ const dateInput = document.getElementById("date");
 const quantityInput = document.getElementById("quantity");
 const emailInput = document.getElementById("email");
 const messageInput = document.getElementById("textmessage");
+
+//Variabler för hamburger-menyn
+let hamburger = document.getElementById("hamburger-icon");
+let navUl = document.getElementById("nav-ul");
 
 //Dagens datum
 let today = new Date().toISOString().slice(0, 10)
@@ -28,38 +33,55 @@ let msgOutput = document.getElementById("msg-output")
 const submitBtn = document.getElementById("submit-btn");
 
 //Lägger till eventlistener på submit-knappen
-submitBtn.addEventListener("click", addBooking);
-submitBtn.addEventListener("click", validateFname);
-submitBtn.addEventListener("click", validateEname);
-submitBtn.addEventListener("click", validateEmail);
-submitBtn.addEventListener("click", validateDate);
-submitBtn.addEventListener("click", validateTime);
-submitBtn.addEventListener("click", validateQuantity);
-//Lägger till eventlistener på inputfält
-fnameInput.addEventListener("keyup", validateFname, false)
-enameInput.addEventListener("keyup", validateEname, false)
-emailInput.addEventListener("keyup", validateEmail, false)
-dateInput.addEventListener("change", validateDate, false);
-timeInput.addEventListener("change", validateTime, false);
-quantityInput.addEventListener("change", validateQuantity, false);
+if (submitBtn) {
+    submitBtn.addEventListener("click", addBooking);
+}
 
+//Lägger till eventlisteners på inputfälten för validering när formuläret skickas
+if (submitBtn) {
+    submitBtn.addEventListener("click", validateFname);
+    submitBtn.addEventListener("click", validateEname);
+    submitBtn.addEventListener("click", validateEmail);
+    submitBtn.addEventListener("click", validateDate);
+    submitBtn.addEventListener("click", validateTime);
+    submitBtn.addEventListener("click", validateQuantity);
+}
 
+if (fnameInput || enameInput || emailInput || dateInput || timeInput || quantityInput) {
+    //Lägger till eventlistener på inputfält
+    fnameInput.addEventListener("keyup", validateFname, false)
+    enameInput.addEventListener("keyup", validateEname, false)
+    emailInput.addEventListener("keyup", validateEmail, false)
+    dateInput.addEventListener("change", validateDate, false);
+    timeInput.addEventListener("change", validateTime, false);
+    quantityInput.addEventListener("change", validateQuantity, false);
+}
 
+//Skicka-knappen är disabled by default, innan användaren klickat i att den godkänner lagring
+if (submitBtn) {
+    submitBtn.disabled = true;
+}
+
+/*Funktioner för 
+valideringar*/
 function validateFname() {
     let inputFname = fnameInput.value;
     let errorFname = document.getElementById("error-fname");
     let fnameI = document.getElementById("i-fname");
 
+    //Skriver ut felmeddelande
     if (inputFname.length == "") {
         if (errorFname.innerHTML = "") {
             errorFname.innerHTML += "<span> Fyll i förnamn </span>";
         } else {
             errorFname.innerHTML += "<span> Fyll i förnamn </span>";
         }
+        //Gör inputfältens ramar röda och gömmer ikonen
         fnameInput.style.border = "2px solid red";
         fnameI.style.display = "none";
         return true;
     } else {
+        //Gör inputfälten gröna och ikonen grön
         errorFname.innerHTML = "";
         fnameInput.style.border = "2px solid green";
         fnameI.style.color = "green";
@@ -162,7 +184,8 @@ function validateQuantity() {
 
 //Funktion för att lägga till en bokning
 function addBooking(event) {
-    event.preventDefault()
+    //Gör att sidan inte laddas om automatiskt
+    event.preventDefault();
 
 
     //Sparar inmatad data i variabler
@@ -174,6 +197,7 @@ function addBooking(event) {
     let email = emailInput.value;
     let message = messageInput.value;
 
+    //Konverterar till JSON
     let jsonStr = JSON.stringify({
         booking_date: date,
         booking_time: time,
@@ -184,6 +208,7 @@ function addBooking(event) {
         quantity: quantity
     });
 
+    //Fetch-anrop med POST 
     fetch(bookingUrl, {
         method: "POST",
         headers: {
@@ -192,9 +217,9 @@ function addBooking(event) {
         body: jsonStr
     })
         .then(response => response.json())
-        .then(data => showMessage(data))
-        .then(data => clearFields())
-        .then(data => removeColor())
+        .then(data => showMessage(data)) //Anropar showMessage, som visar meddelande
+        .then(data => clearFields()) //Tömmer fälten
+        .then(data => removeColor()) //Tar bort färger som lagts till vid formuläret
         .catch(err => console.log(err))
 }
 
@@ -208,6 +233,9 @@ function clearFields() {
     emailInput.value = "";
     messageInput.value = "";
     quantityInput.value = "";
+
+    //Gör att checkboxen inte är checkad när en bokning har skapats
+    document.getElementById("approve").checked = false;
 
 }
 
@@ -235,5 +263,23 @@ function removeColor() {
         if (icons[y].style.color = "green") {
             icons[y].style.color = "white";
         }
+    }
+
+    //Tar bort antal gästers gröna ram
+    if (quantityInput.style.border = "green") {
+        quantityInput.style.border = "1px solid black";
+    }
+    //Tar bort tidens gröna ram
+    if (timeInput.style.border = "green") {
+        timeInput.style.border = "1px solid black";
+    }
+}
+
+//Funktion för att göra så att submit-knappen inte fungerar när checkboxen inte är ibockad
+function disableSubmit(changed) {
+    if (changed.checked) {
+        submitBtn.disabled = false;
+    } else {
+        submitBtn.disabled = true;
     }
 }
