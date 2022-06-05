@@ -50,10 +50,17 @@ input[type=submit]:hover{
     h2 {
         margin-bottom: 0;
     }
+}
+
+.about-section{
+    @extend .menu-section;
     p{
         max-width:800px;
-        width:100%;
+        width: 100%;
         margin: auto;
+    }
+    div{
+        align-self: baseline;
     }
 }
 
@@ -110,19 +117,12 @@ input[type=submit]:hover{
 
 .flex {
     display: flex;
-    max-width: 400px;
+    justify-content: space-between;
+    max-width: 500px;
 
     label{
         margin-left:4rem;
     }
-
-    div {
-        margin: 2rem;
-    }
-}
-
-.logo {
-    max-width: 200px;
 }
 
 .reset{
@@ -147,6 +147,10 @@ input[type=submit]:hover{
     margin:auto;
     display:flex;
     justify-content: space-evenly;
+    flex-wrap: wrap;
+    img{
+        max-width: 100%;
+    }
     h3{
         color: $c-light;
     }
@@ -155,6 +159,7 @@ input[type=submit]:hover{
     }
     div{
         max-width:350px;
+        margin: 1rem;
         h3, p{
             text-align: center;
         }
@@ -163,4 +168,5 @@ input[type=submit]:hover{
 
 .box{
     margin-top:4rem;
+    margin-bottom:3rem;
 }

@@ -16,7 +16,7 @@ body {
 }
 
 h1 {
-    font-size: 6rem;
+    font-size: 5.5rem;
     text-align: center;
     font-family: $big-heading;
     color: $c-main;
@@ -63,12 +63,15 @@ nav {
     }
 }
 
+.hamburger-menu {
+    display: none;
+}
+
 a:hover {
     font-weight: bold;
 }
 
 .desktop-nav ul {
-    list-style-type: none;
     position: absolute;
     top: 2.5rem;
     right: 2%;
@@ -82,7 +85,8 @@ nav {
 }
 
 p,
-label {
+label,
+li {
     font-size: 2rem;
     font-family: $font-family;
 }
@@ -92,6 +96,14 @@ form {
     width: 100%;
     margin: 0 auto;
     padding-bottom: 4rem;
+}
+
+ul {
+    list-style-type: none;
+}
+
+li {
+    margin-top: 2rem;
 }
 
 a {
@@ -105,7 +117,7 @@ input[type=text],
 input[type=email],
 input[type=number],
 textarea {
-    max-width: 400px;
+    max-width: 600px;
     width: 100%;
     padding: 0.5rem;
     margin-bottom: 3rem;
@@ -114,6 +126,7 @@ textarea {
 input[type=time],
 input[type=date] {
     max-width: 200px;
+    padding: 2rem;
     width: 100%;
 }
 
@@ -137,14 +150,22 @@ select {
 #quantity-div {
     max-width: 200px;
     width: 100%;
-    margin: auto;
+    margin: 5rem auto;
 }
 
-.hero-text{
- h1{
-    color: $c-light;
- }
-    a{
+
+#approve {
+    font-weight: bold;
+}
+
+.hero-text {
+    width: 100%;
+
+    h1 {
+        color: $c-light;
+    }
+
+    a {
         @extend .li-btn;
         font-size: 4rem;
     }
@@ -160,8 +181,7 @@ form i {
 }
 
 #msg-output {
-    max-width: 500px;
-    margin: auto;
+    text-align: center;
 
     p {
         font-size: 2.5rem;
@@ -169,29 +189,26 @@ form i {
     }
 }
 
-.index-dinner{
-    h2{
+.index-dinner {
+    h2 {
         text-align: center;
         color: $c-light;
     }
 }
 
-footer{
+footer {
     text-align: center;
     background-color: $c-dark;
     color: $c-light;
-    padding:2rem;
-    margin-top:1rem;
+    padding: 2rem;
+    margin-top: 1rem;
 }
+
 
 //Meny-sidan
 #starter,
 #maincourse,
-#dessert,
-#whitewine,
-#redwine,
-#beer,
-#nonalcohol {
+#dessert {
     @extend %menubox;
 }
 
@@ -205,8 +222,94 @@ footer{
         }
     }
 
+    main {
+        margin-top: 8rem;
+    }
+
     %menubox {
         max-width: 800px;
         width: 100%;
+    }
+
+    .hero-text {
+        width: 100%;
+        top: 25%;
+
+        h1 {
+            font-size: 3.3rem;
+        }
+
+        a {
+            font-size: 2.5rem;
+            padding: 0.5rem 1rem;
+            background-color: $c-light !important;
+        }
+    }
+
+    .desktop-nav {
+        display: none;
+    }
+
+    .hamburger-menu {
+        display: block;
+        background-color: transparent;
+        position: relative;
+        top: 0;
+        right: 0;
+        z-index: 2;
+        overflow: hidden;
+    }
+
+    .hamburger-icon {
+        background-color: transparent;
+        border: none;
+        font-size: 3rem;
+        cursor: pointer;
+        display: block;
+        color: $c-light;
+        position: absolute;
+        right: 2rem;
+        top: 2rem;
+    }
+
+    .nav-ul {
+        display: none;
+        padding-left: 0;
+        list-style-type: none;
+        width: 100vw;
+        height: 80vh;
+        position: relative;
+        top: 2rem;
+    }
+
+
+    .nav-ul li {
+        border-bottom: 2px solid $c-light;
+        padding: 6%;
+        text-align: center;
+        display: block;
+
+        a{
+            font-size: 3rem;
+        }
+
+    }
+
+    /*Länkarna när dom syns*/
+    .nav-ul.show {
+        display: block;
+        background-color: $c-dark;
+    }
+
+    .li-btn {
+        background-color: $c-dark;
+
+        a {
+            color: $c-light;
+        }
+    }
+
+    #form-bookings {
+        padding: 2rem;
     }
 }
