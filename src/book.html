@@ -15,24 +15,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/2090b52781.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/main.css">
-    <title>Document</title>
+    <title>Trattoria Romantico | Om oss</title>
 </head>
 
 <body>
     <header>
+       <!--meny för desktop-->
+       <nav class="desktop-nav">
         <a class="logo" href="index.html"><img src="images/loggan.svg" alt=""></a>
-        <nav class="desktop-nav">
-            <ul class="nav-ul" id="nav-ul">
-                <li><a href="about.html">Om oss</a></li>
-                <li><a href="menu.html">Meny</a></li>
-                <li class="li-btn"><a href="book.html">Boka bord</a></li>
-            </ul>
-        </nav>
+        <ul>
+            <li><a href="about.html">Om oss</a></li>
+            <li><a href="menu.html">Meny</a></li>
+            <li class="li-btn"><a href="book.html">Boka bord</a></li>
+        </ul>
+    </nav>
+    <!--Hamburger-meny-->
+    <nav class="hamburger-menu">
+        <a class="logo" href="index.html"><img src="images/loggan.svg" alt=""></a>
+        <button class="hamburger-icon" id="hamburger-icon"><i class="fas fa-bars"></i></button>
+        <ul class="nav-ul" id="nav-ul">
+            <li><a href="about.html">Om oss</a></li>
+            <li><a href="menu.html">Meny</a></li>
+            <li class="li-btn"><a href="book.html">Boka bord</a></li>
+        </ul>
+    </nav>
     </header>
     <main>
         <section class="booking-section">
             <h1>Boka bord</h1>
+            <!--Div där text skrivs ut med JS-->
             <div id="msg-output"></div>
+            <!--Formulär för bordsbokning-->
             <form id="form-bookings">
                 <!--Förnamn-->
                 <div>
@@ -72,6 +85,7 @@
 
                     </div>
                     <div>
+                        <!--Tid-->
                         <label for="time">Tid: <span class="required">*</span></label><br><br>
                         <div id="error-time"></div>
                         <div class="icon-flex">
@@ -98,6 +112,7 @@
                         </div>
                     </div>
                 </div>
+                <!--Antal personer-->
                 <div id="quantity-div">
                     <label for="quantity">Antal personer: <span class="required">*</span></label><br><br>
                     <div id="error-quantity"></div>
@@ -118,14 +133,19 @@
                         <div><i id="i-quantity" class="fa-solid fa-circle-check"></i></div>
                     </div>
                 </div>
+                <!--Önskemål-->
                 <div id="textarea">
-                    <label for="textmessage">Önskemål(frivilligt)</label><br><br>
-                    <textarea name="textmessage" id="textmessage" rows="6" cols="40"> </textarea>
+                    <label for="textmessage">Önskemål(frivilligt)</label><br><br><textarea name="textmessage"
+                        id="textmessage" rows="6" cols="40"></textarea>
                 </div>
+                <!--Godkänn lagring-->
+                <input type="checkbox" id="approve" name="approve" value="Jag godkänner" onclick="disableSubmit(this)">
+                <label for="approve" class="hoverbold">För att boka bord på Trattoria Romantico behöver vi lagra dina
+                    personuppgifter.
+                    Klicka i rutan för att godkänna. </label><br><br>
                 <!--Skicka-->
                 <div class="flex-btn">
                     <input type="submit" class="submit-btn" value="Lägg till bokning" id="submit-btn">
-                    <button id="reset" class="reset">Rensa fälten</button>
                 </div>
             </form>
         </section>
@@ -133,7 +153,7 @@
     <footer>
         <p>Trattoria Romantico | trattoriaromantico@mail.se | emfo2102@student.miun.se 2022</p>
     </footer>
-    <script src="js/booking.js"></script>
+    <script src="js/main.js"></script>
 </body>
 
 </html>

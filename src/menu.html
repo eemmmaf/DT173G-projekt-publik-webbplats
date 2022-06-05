@@ -14,74 +14,88 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/2090b52781.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/main.css">
-    <title>Document</title>
+    <title>Trattoria Romantico | Meny och vinlista</title>
 </head>
 
 <body>
     <header>
-        <a class="logo" href="index.html"><img src="images/loggan.svg" alt=""></a>
+        <!--meny för desktop-->
         <nav class="desktop-nav">
-            <ul class="nav-ul" id="nav-ul">
+            <a class="logo" href="index.html"><img src="images/loggan.svg" alt=""></a>
+            <ul>
                 <li><a href="about.html">Om oss</a></li>
                 <li><a class="active" href="menu.html">Meny</a></li>
                 <li class="li-btn"><a href="book.html">Boka bord</a></li>
             </ul>
         </nav>
+        <!--Hamburger-meny-->
+        <nav class="hamburger-menu">
+            <a class="logo" href="index.html"><img src="images/loggan.svg" alt=""></a>
+            <button class="hamburger-icon" id="hamburger-icon"><i class="fas fa-bars"></i></button>
+            <ul class="nav-ul" id="nav-ul">
+                <li><a href="about.html">Om oss</a></li>
+                <li><a href="menu.html">Meny</a></li>
+                <li class="li-btn"><a href="book.html">Boka bord</a></li>
+            </ul>
+        </nav>
     </header>
     <main>
+        <!--Sektion med menyn-->
         <section class="menu-section">
             <h1>Trattoria Romantico <br>Meny</h1>
-                <div id="starter">
-                    <h2>Förrätter</h2>
+            <!--Här skrivs förrätter ut-->
+            <h2>Förrätter</h2>
+            <div id="starter">
 
-                </div>
-                <div class="flex-menu">
+            </div>
+            <div class="flex-menu">
                 <div id="maincourse">
+                    <!--Här skrivs varmrätter ut-->
                     <h2>Varmrätter</h2>
 
+                    <h3>Pasta</h3>
                     <div id="pasta">
-                        <h3>Pasta</h3>
                     </div>
 
+                    <h3>Från grillen</h3>
                     <div id="grill">
-                        <h3>Från grillen</h3>
 
                     </div>
+                    <h3>Pizza</h3>
                     <div id="pizza">
-                        <h3>Pizza</h3>
                     </div>
-                    </div>
-                    </div>
-                    <div id="dessert">
-                        <h2>Efterrätt</h2>
+                </div>
+            </div>
+            <!--Här skrivs efterrätter ut-->
+            <h2>Efterrätt</h2>
+            <div id="dessert">
 
-                    </div>
+            </div>
+            <!--Här skrivs dryck ut-->
+            <h2>Dryck</h2>
+            <h3>Vita viner</h3>
+            <div id="whitewine">
 
-                    </ul>
-                    <h2>Dryck</h2>
-                    <h3>Vita viner</h3>
-                    <div id="whitewine">
+            </div>
+            <h3>Röda viner</h3>
+            <div id="redwine">
 
-                    </div>
-                    <h3>Röda viner</h3>
-                    <div id="redwine">
+            </div>
+            <h3>Öl</h3>
+            <div id="beer">
 
-                    </div>
-                    <h3>Öl</h3>
-                    <div id="beer">
+            </div>
+            <h3>Alkoholfritt</h3>
+            <div id="nonalcohol">
 
-                    </div>
-                    <h3>Alkoholfritt</h3>
-                    <div id="nonalcohol">
-
-                    </div>
+            </div>
 
         </section>
     </main>
     <footer>
         <p>Trattoria Romantico | trattoriaromantico@mail.se | emfo2102@student.miun.se 2022</p>
-            </footer>
-    <script src="js/menu.js"></script>
+    </footer>
+    <script src="js/main.js"></script>
 </body>
 
 </html>

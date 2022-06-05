@@ -14,13 +14,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/2090b52781.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/main.css">
-    <title>Document</title>
+    <title>Trattoria Romantico | Startsida</title>
 </head>
 
 <body>
     <header>
-        <a class="logo" href="index.html"><img src="images/loggan.svg" alt=""></a>
+        <!--meny för desktop-->
         <nav class="desktop-nav">
+            <a class="logo" href="index.html"><img src="images/loggan.svg" alt=""></a>
+            <ul>
+                <li><a href="about.html">Om oss</a></li>
+                <li><a href="menu.html">Meny</a></li>
+                <li class="li-btn"><a href="book.html">Boka bord</a></li>
+            </ul>
+        </nav>
+        <!--Hamburger-meny-->
+        <nav class="hamburger-menu">
+            <a class="logo" href="index.html"><img src="images/loggan.svg" alt=""></a>
+            <button class="hamburger-icon" id="hamburger-icon"><i class="fas fa-bars"></i></button>
             <ul class="nav-ul" id="nav-ul">
                 <li><a href="about.html">Om oss</a></li>
                 <li><a href="menu.html">Meny</a></li>
@@ -29,36 +40,43 @@
         </nav>
     </header>
     <main>
+        <!--Stor bild med text på-->
         <div class="hero">
-            <img class="big-image" src="images/indeximg.jpg" />
+            <img class="big-image" src="images/indeximg.jpg" alt="bruna stolar och bord med vita dukar" />
             <div class="hero-text">
                 <h1>Trattoria Romantico</h1>
                 <a href="book.html">Boka bord</a>
             </div>
         </div>
+        <!--Sektion med tre bilder och en text-->
         <section class="index-dinner">
             <h2>Middag enligt oss</h2>
+            <!--Flexbox-->
             <div class="flex-index">
                 <div>
                     <img src="images/mat.jpg" alt="pasta med hyvlad tryffel">
                     <h3>Maten</h3>
-                    <p>Varje dag bakar våra kockar ny pasta så att våra gäster ska få äta dagsfärsk pasta. Förutom färsk pasta har vi grillade rätter och napolitansk pizza. All mat lagad med kärlek.  </p>
+                    <p>Varje dag bakar våra kockar ny pasta så att våra gäster ska få äta dagsfärsk pasta. Förutom färsk
+                        pasta har vi grillade rätter och napolitansk pizza. All mat lagad med kärlek. </p>
                 </div>
                 <div>
                     <img src="images/wine.jpg" alt="flaskor med rödvin">
                     <h3>Vinet</h3>
-                    <p>Vi erbjuder en vinlista som är utvalda för att passa våra rätter. Det är ett brett utbud med italienska viner. </p>
+                    <p>Vi erbjuder en vinlista som är utvalda för att passa våra rätter. Det är ett brett utbud med
+                        italienska viner. </p>
                 </div>
                 <div>
                     <img src="images/atmosfere.jpg" alt="glad kvinna som dricker rött vin i restaurang">
                     <h3>Atmosfären</h3>
-                    <p>Hos oss äter du i en lugn, romantisk och familjär miljö. Vi anser att atmosfären är lika viktig som maten. Hos oss kommer du trivas!</p>
+                    <p>Hos oss äter du i en lugn, romantisk och familjär miljö. Vi anser att atmosfären är lika viktig
+                        som maten. Hos oss kommer du trivas!</p>
                 </div>
             </div>
         </section>
     </main>
     <footer>
         <p>Trattoria Romantico | trattoriaromantico@mail.se | emfo2102@student.miun.se 2022</p>
+        <script src="js/main.js"></script>
     </footer>
 </body>
 

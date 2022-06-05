@@ -14,22 +14,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/2090b52781.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/main.css">
-    <title>Document</title>
+    <title>Trattoria Romantico | Om oss</title>
 </head>
 
 <body>
     <header>
-        <a class="logo" href="index.html"><img src="images/loggan.svg" alt=""></a>
+        <!--meny för desktop-->
         <nav class="desktop-nav">
+            <a class="logo" href="index.html"><img src="images/loggan.svg" alt=""></a>
+            <ul>
+                <li><a class="active" href="about.html">Om oss</a></li>
+                <li><a href="menu.html">Meny</a></li>
+                <li class="li-btn"><a href="book.html">Boka bord</a></li>
+            </ul>
+        </nav>
+        <!--Hamburger-meny-->
+        <nav class="hamburger-menu">
+            <a class="logo" href="index.html"><img src="images/loggan.svg" alt=""></a>
+            <button class="hamburger-icon" id="hamburger-icon"><i class="fas fa-bars"></i></button>
             <ul class="nav-ul" id="nav-ul">
                 <li><a href="about.html">Om oss</a></li>
-                <li><a class="active" href="menu.html">Meny</a></li>
+                <li><a href="menu.html">Meny</a></li>
                 <li class="li-btn"><a href="book.html">Boka bord</a></li>
             </ul>
         </nav>
     </header>
     <main>
-        <section class="menu-section">
+        <!--Sektion med företagspresentation-->
+        <section class="about-section">
             <h1>Om oss</h1>
             <p><b>Välkommen</b> till Trattoria Romantico</p><br>
             <p>Vi är ett familjeägt företag sedan 30 år tillbaka. Hos oss kommer du för att njuta av en middag med
@@ -42,16 +54,23 @@
             <p><b>Varmt välkommen till oss!</b></p>
             <article class="box">
                 <h2>Kontakt</h2>
+                <!--Flexbox-->
                 <div class="flex">
                     <div>
                         <h3>Öppettider:</h3>
-                        <p>Tisdag-Söndag: 15:00-23:00</p>
+                        <ul>
+                            <li>Måndag : Stängt</li>
+                            <li>Tisdag-Fredag : 15:00 - 23:30</li>
+                            <li>Lördag-Söndag 14:00 - 00:00</li>
+                        </ul>
                     </div>
                     <div>
                         <h3>Kontakta oss</h3>
-                        <p>trattoriaromantico@mail.se</p>
-                        <p>Brommavägen 2135, Stockholm</p>
-                        <p>076 000 00 00</p>
+                        <ul>
+                            <li>trattoriaromantico@mail.se</li>
+                            <li>Brommavägen 2135, Stockholm</li>
+                            <li>076 000 00 00</li>
+                        </ul>
                     </div>
                 </div>
             </article>
@@ -61,7 +80,7 @@
     <footer>
         <p>Trattoria Romantico | trattoriaromantico@mail.se | emfo2102@student.miun.se 2022</p>
     </footer>
-    <script src="js/menu.js"></script>
+    <script src="js/main.js"></script>
 </body>
 
 </html>
