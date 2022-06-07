@@ -1,7 +1,17 @@
+/*
+ * @Author: Emma Forslund - emfo2102 
+ * @Date: 2022-06-07 02:10:27 
+ * @Last Modified by: Emma Forslund - emfo2102
+ * @Last Modified time: 2022-06-07 02:13:41
+ */
+
+
+/* Används för aktiva länkar*/
 .active {
     border-bottom: 3px solid $c-light;
 }
 
+/*Används för fet-text, mest för hover-effekt*/
 .hoverbold{
     font-weight: bold;
 }
@@ -15,21 +25,7 @@
     }
 }
 
-input[type=submit]{
-    background-color: $c-complement;
-    border:none;
-    box-shadow: $shadow;
-    padding:1rem;
-    color:white;
-    font-family: $font-family;
-    font-size: 1.8rem;
-    cursor: pointer;
-}
-
-input[type=submit]:hover{
-    font-weight: bold;
-}
-
+/*Sektion för menyn. Återanvänds på about-sidan*/
 .menu-section {
     max-width: 1000px;
     width: 100%;
@@ -52,6 +48,7 @@ input[type=submit]:hover{
     }
 }
 
+//Använder menu-section med extend
 .about-section{
     @extend .menu-section;
     p{
@@ -68,31 +65,11 @@ input[type=submit]:hover{
     @extend .hoverbold;
 }
 
-.hero-text {
-    position: absolute;
-    top: 30%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
 .booking-section {
     margin: auto;
     background-color: $c-complement-light;
     max-width: 800px;
     padding-top:0.5rem;
-}
-
-.hero {
-    text-align: center;
-    color: white;
-
-    img {
-        width: 100%;
-    }
-}
-
-.description-p {
-    margin-bottom: 5rem;
 }
 
 %menubox {
@@ -105,7 +82,7 @@ input[type=submit]:hover{
     justify-content: space-between;
 }
 
-
+//Flex för ikoner
 .icon-flex {
     display: flex;
 

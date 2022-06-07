@@ -1,3 +1,11 @@
+/*
+ * @Author: Emma Forslund - emfo2102 
+ * @Date: 2022-06-07 02:10:08 
+ * @Last Modified by: Emma Forslund - emfo2102
+ * @Last Modified time: 2022-06-07 02:17:08
+ */
+
+
 * {
     box-sizing: border-box;
 }
@@ -63,12 +71,13 @@ nav {
     }
 }
 
+// Gömmer hamburger-menyn för desktop
 .hamburger-menu {
     display: none;
 }
 
 a:hover {
-    font-weight: bold;
+    @extend .hoverbold;
 }
 
 .desktop-nav ul {
@@ -112,7 +121,7 @@ a {
     color: $c-dark;
 }
 
-
+//Input-fält
 input[type=text],
 input[type=email],
 input[type=number],
@@ -130,6 +139,22 @@ input[type=date] {
     width: 100%;
 }
 
+input[type=submit] {
+    background-color: $c-complement;
+    border: none;
+    box-shadow: $shadow;
+    padding: 1rem;
+    color: white;
+    font-family: $font-family;
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    font-weight: bold;
+}
+
+//felmeddelanden
 span {
     font-size: 1.6rem;
     color: rgb(178, 5, 5);
@@ -138,9 +163,15 @@ span {
     margin-bottom: 0.5rem;
 }
 
+//Asterisk
 .required {
     font-size: 2rem;
 }
+
+.description-p {
+    margin-bottom: 5rem;
+}
+
 
 select {
     max-width: 200px;
@@ -155,7 +186,7 @@ select {
 
 
 #approve {
-    font-weight: bold;
+    @extend .hoverbold;
 }
 
 .hero-text {
@@ -186,6 +217,23 @@ form i {
     p {
         font-size: 2.5rem;
         font-weight: bold;
+    }
+}
+
+//Startsidan med stor bild och text
+.hero-text {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.hero {
+    text-align: center;
+    color: white;
+
+    img {
+        width: 100%;
     }
 }
 
@@ -242,14 +290,16 @@ footer {
         a {
             font-size: 2.5rem;
             padding: 0.5rem 1rem;
-            background-color: $c-light !important;
+            background-color: $c-light  !important;
         }
     }
 
+    //gömmer desktop-menyn
     .desktop-nav {
         display: none;
     }
 
+    //Visar hamburger-menyn
     .hamburger-menu {
         display: block;
         background-color: transparent;
@@ -289,7 +339,7 @@ footer {
         text-align: center;
         display: block;
 
-        a{
+        a {
             font-size: 3rem;
         }
 

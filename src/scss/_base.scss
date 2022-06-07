@@ -1,3 +1,10 @@
+/*
+ * @Author: Emma Forslund - emfo2102 
+ * @Date: 2022-06-07 02:10:18 
+ * @Last Modified by:   Emma Forslund - emfo2102 
+ * @Last Modified time: 2022-06-07 02:10:18 
+ */
+
 //Fonts
 @import url('https://fonts.googleapis.com/css2?family=Abel&family=Arvo&family=Satisfy&family=Ubuntu&display=swap');
 
@@ -8,9 +15,6 @@ $c-dark : darken($c-main, 5%);
 $c-light : lighten($c-main, 80%);
 $c-complement : #1a3b0b;
 $c-complement-light: lighten($c-complement, 85%);
-
-//Textstorlekar
-
 
 //Font-families
 $font-family: 'Abel', sans-serif;
